@@ -13,7 +13,7 @@ from .models import (
 )
 
 def home(request):
-    hero = Hero.objects.first(),
+    hero = Hero.objects.first()
     technologies = Technology.objects.all()
     about = About.objects.first()
     skill_categories = SkillCategory.objects.all()

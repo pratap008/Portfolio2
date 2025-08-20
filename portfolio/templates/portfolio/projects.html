@@ -25,70 +25,17 @@
 
         <div class="project-list">
             <!-- Project 1 -->
+             {% for project in projects %}
             <div class="project-card">
                 <div class="project-info">
-                    <h3>INGOLF</h3>
-                    <p>I have done this awesome website development project in the recent time with passion...</p>
-                    <a href="#">Case Study→</a>
-                    <a href="#">GitHub→</a>
+                    <h3>{{ project.title }}</h3>
+                    <p>{{ project.description }}</p>
+                    <a href="{{ project.case_study_link }}">Case Study→</a>
+                    <a href="{{ project.github_link }}">GitHub→</a>
                 </div>
-                <img src="{% static 'images/proj1.webp' %}" alt="INGOLF project preview">
+                <img src="{{ project.image.url }}" alt="INGOLF project preview">
             </div>
-
-            <!-- Project 2 -->
-            <div class="project-card">
-                <div class="project-info">
-                    <h3>KAFF</h3>
-                    <p>I have done this awesome website development project in the recent time with passion...</p>
-                    <a href="#">Case Study→</a>
-                    <a href="#">GitHub→</a>
-                </div>
-                <img src="{% static 'images/proj2.jpg' %}" alt="KAFF project preview">
-            </div>
-
-            <!-- Project 3 -->
-            <div class="project-card">
-                <div class="project-info">
-                    <h3>Wodify</h3>
-                    <p>I have done this awesome website development project in the recent time with passion...</p>
-                    <a href="#">Case Study→</a>
-                    <a href="#">GitHub→</a>
-                </div>
-                <img src="{% static 'images/proj3.webp' %}" alt="Wodify project preview">
-            </div>
-
-            <!-- Project 4 -->
-            <div class="project-card">
-                <div class="project-info">
-                    <h3>CreativeFusion</h3>
-                    <p>I have done this awesome website development project in the recent time with passion...</p>
-                    <a href="#">Case Study→</a>
-                    <a href="#">GitHub→</a>
-                </div>
-                <img src="{% static 'images/proj4.png' %}" alt="CreativeFusion project preview">
-            </div>
-
-            <!-- Project 5 -->
-            <div class="project-card">
-                <div class="project-info">
-                    <h3>UP</h3>
-                    <p>I have done this awesome website development project in the recent time with passion...</p>
-                    <a href="#">Case Study→</a>
-                    <a href="#">GitHub→</a>
-                </div>
-                <img src="{% static 'images/proj5.jpg' %}" alt="UP project preview">
-            </div>
-
-            <!-- Project 6 -->
-            <div class="project-card">
-                <div class="project-info">
-                    <h3>Casa</h3>
-                    <p>I have done this awesome website development project in the recent time with passion...</p>
-                    <a href="#">Case Study→</a>
-                    <a href="#">GitHub→</a>
-                </div>
-                <img src="{% static 'images/proj6.webp' %}" alt="Casa project preview">
-            </div>
+            {% endfor %}
         </div>
     </div>
 {% endblock main %}

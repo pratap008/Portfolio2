@@ -26,75 +26,14 @@
 
         <div class="articles">
              <!-- ✅ Copied Article 1 -->
+            {% for article in articles %}
             <div class="card">
-                <img src="{% static 'images/artp1.avif' %}" alt="Top 10 Personal Portfolio Site">
-                <p class="category">Nov 5, 2023 - 7 Min Read</p>
-                <h3>Top 10 Personal Portfolio Site You Must See</h3>
-                <a href="#" class="read-more">Read More →</a>
+                <img src="{{ article.image.url }}" alt="Top 10 Personal Portfolio Site">
+                <p class="category">{{ article.published_date|date:"M d, Y" }} - {{ article.read_time }}</p>
+                <h3>{{ article.title }}</h3>
+                <a href="{{ article.link }}" class="read-more">Read More →</a>
             </div>
-
-            <!-- ✅ Copied Article 2 -->
-            <div class="card">
-                <img src="{% static 'images/artp2.avif' %}" alt="A Book to Shine Your Design Knowledge 2023">
-                <p class="category">Oct 10, 2023 - 8 Min Read</p>
-                <h3>A Book to Shine Your Design Knowledge 2023</h3>
-                <a href="#" class="read-more">Read More →</a>
-            </div>
-
-            <!-- ✅ Copied Article 3 -->
-            <div class="card">
-                <img src="{% static 'images/artp3.avif' %}" alt="Important Gadgets for the UX Designers">
-                <p class="category">Sep 15, 2023 - 13 Min Read</p>
-                <h3>Important Gadgets for the UX Designers</h3>
-                <a href="#" class="read-more">Read More →</a>
-            </div>
-            <!-- Card 1 -->
-            <div class="card">
-                <img src="{% static 'images/art1.avif' %}" alt="Article Image">
-                <p class="category">Product Updates • Feb 24, 2024</p>
-                <h3>Meet all the new Stack: The documentation platform you know, made effortless with AI</h3>
-                <a href="#">Learn More →</a>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="card">
-                <img src="{% static 'images/art2.jpg' %}" alt="Article Image">
-                <p class="category">Productivity • Feb 10, 2024</p>
-                <h3>Using heatmaps to improve your website's UX: 5 ways to get started</h3>
-                <a href="#">Learn More →</a>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="card">
-                <img src="{% static 'images/art3.avif' %}" alt="Article Image">
-                <p class="category">Spotlight • Jan 24, 2023</p>
-                <h3>How to create a cohesive omnichannel experience in the UX process</h3>
-                <a href="#">Learn More →</a>
-            </div>
-
-            <!-- Card 4 -->
-            <div class="card">
-                <img src="{% static 'images/art4.avif' %}" alt="Article Image">
-                <p class="category">Productivity • Jan 24, 2023</p>
-                <h3>The power and business value of visual communication</h3>
-                <a href="#">Learn More →</a>
-            </div>
-
-            <!-- Card 5 -->
-            <div class="card">
-                <img src="{% static 'images/art5.avif' %}" alt="Article Image">
-                <p class="category">Spotlight • Jan 24, 2023</p>
-                <h3>The Rise of AI in Everyday Life: Transforming the Norm</h3>
-                <a href="#">Learn More →</a>
-            </div>
-
-            <!-- ✅ New Card 6 -->
-            <div class="card">
-                <img src="{% static 'images/art6.avif' %}" alt="Article Image">
-                <p class="category">Company • Mar 01, 2024</p>
-                <h3>Inside Our Company: How Innovation Drives Our Success</h3>
-                <a href="#">Learn More →</a>
-            </div>
+            {% endfor %}
         </div>
     </div>
 {% endblock main %}
