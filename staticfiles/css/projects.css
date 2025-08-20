@@ -1,0 +1,144 @@
+/* General Body Styles */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    background-color: #FDFCFB;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.subtitle {
+    color: #555;
+    max-width: 700px;
+    margin: 10px auto 40px;
+    font-size: 18px;
+}
+
+/* Filter Buttons */
+.filters {
+    margin-bottom: 40px;
+}
+
+.filters button {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    color: #555;
+    padding: 10px 20px;
+    margin: 0 10px 10px 0;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.filters button.active,
+.filters button:hover {
+    background-color: #007BFF;
+    color: #fff;
+    border-color: #007BFF;
+}
+
+/* Project Grid */
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+/* Project Card */
+.project-card {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+/* Project Image */
+.project-card img {
+    max-width: 180px;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+/* Project Info */
+.project-info {
+    text-align: left;
+}
+
+.project-info h3 {
+    font-size: 22px;
+    margin: 0 0 10px;
+}
+
+.project-info p {
+    color: #555;
+    font-size: 15px;
+    margin: 0 0 15px;
+}
+
+.project-info a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.project-info a:hover {
+    text-decoration: underline;
+}
+/* Header Container */
+.head {
+    background-color: #FDFCFB;  /* Light background */
+    padding: 20px;
+    display: flex;
+    justify-content: flex-start; /* Align button to the left */
+    align-items: center;
+    border-bottom: 1px solid #eee; /* Subtle bottom border */
+}
+
+.head {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.head a {
+    display: inline-block;
+    background-color: #007BFF; /* Light blue theme */
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-decoration: none;  /* Removes underline */
+    transition: background-color 0.3s ease;
+}
+
+.head #home:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+

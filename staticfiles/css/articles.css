@@ -1,0 +1,151 @@
+/* General Styles */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    background-color: #FDFCFB;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+/* Page Header */
+h1 {
+    text-align: center;
+    font-size: 48px;
+    margin-top: 40px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #555;
+    max-width: 700px;
+    margin: 10px auto 40px;
+}
+
+/* Filter Buttons */
+.filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.filters button {
+    padding: 8px 18px;
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 20px;
+    cursor: pointer;
+    color: #555;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.filters button:hover {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+.filters .active {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+/* Article Cards */
+.articles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding-bottom: 60px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 15px;
+    border: 1px solid #eee;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.category {
+    font-size: 14px;
+    color: #777;
+    margin: 15px;
+}
+
+.card h3 {
+    font-size: 20px;
+    color: #333;
+    margin: 0 15px 10px;
+}
+
+.card a {
+    display: inline-block;
+    margin: 0 15px 15px;
+    font-weight: bold;
+    color: #007BFF;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+
+/* Header Container */
+.head {
+    background-color: #FDFCFB;  /* Light background */
+    padding: 20px;
+    display: flex;
+    justify-content: flex-start; /* Align button to the left */
+    align-items: center;
+    border-bottom: 1px solid #eee; /* Subtle bottom border */
+}
+
+/* Home Button Styling */
+.head #home {
+    background-color: #007BFF; /* Blue primary color */
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 25px; /* Rounded button */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Hover Effect */
+.head #home:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
