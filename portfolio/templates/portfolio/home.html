@@ -1,0 +1,176 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+{% block title %}Creative web developer{% endblock title %}
+
+{% block header %}
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">STOKES.</div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#about-me">About</a></li>
+                    <li><a href="#my-works">Works</a></li>
+                    <li><a href="#latest-news">Blog</a></li>
+                </ul>
+            </nav>
+            <a href="{% url 'contact_me' %}" class="contact-button">Contact Me</a>
+        </div>
+    </header>
+{% endblock header %}
+    
+
+        {% block main %}
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    {% if hero %}
+                        <h1>{{ hero.title }}</h1>
+                        <p>{{ hero.subtitle }}</p>
+                    {% else %}
+                        <h1>CREATIVE WEB DEVELOPER</h1>
+                        <p>I'm a Full Stack Creative Web Developer & Software Engineer based in Warsaw, Poland. Providing the best development services for your next projects.</p>
+                    {% endif %}
+                    <div class="hero-buttons">
+                        <a href="#about-me" class="btn btn-primary">About Me →</a>
+                        <div class="keep-scrolling">
+                            <div class="scroll-icon">↓</div>
+                            <span>Keep Scrolling</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                {%if hero.image %}
+                    <img src="{{ hero.image.url }}" alt="A portrait of a smiling man">
+                {% endif %}
+                </div>
+            </div>
+        </section>
+
+        <div class="tech-banner">
+            <div class="tech-scroll">
+            {% for tech in  technologies %}
+                <span>♦ {{ tech.name }}</span>
+            {% endfor %}
+            {% for tech in  technologies %}
+                <span>♦ {{ tech.name }}</span>
+            {% endfor %}
+            </div>
+        </div>
+
+        <section class="about-me">
+            <div class="container" id="about-me">
+                <h2>ABOUT ME</h2>
+                {% if about %}
+                    <p>{{ about.short_description }}</p>
+                    <p>{{ about.long_description }}</p>
+                {% endif %}
+                <div class="skills-section">
+                    {% for category in skill_categories %}
+                    <div class="skill-category">
+                        <h3>{{ category.name }}</h3>
+                        <ul>
+                            {% for skill in category.skills.all %}
+                            <li>{{ skill.name }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <section class="working-process">
+            <div class="container">
+                <h2>MY WORKING PROCESS</h2>
+                <div class="process-steps">
+                    {% for step in process_steps %}
+                    <div class="step">
+                        <div class="step-number">0{{ step.step_number }}.</div>
+                        <div class="step-content">
+                            <h3>{{ step.title }}</h3>
+                            <p>{{ step.description }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <section class="recent-projects">
+            <div class="container">
+                <div class="section-header" id="my-works">
+                    <h2>TAKE A LOOK AT MY RECENT PROJECT</h2>
+                    <a href="{% url 'projects' %}" class="btn btn-secondary">View All →</a>
+                </div>
+                <div class="project-list">
+                    {% for proj in recent_projects %}
+                    <div class="project-card">
+                        <div class="project-info">
+                            <h3>{{ proj.title }}</h3>
+                            <p>{{ proj.description }}</p>
+                            <a href="{{ proj.case_study_link }}">Case Study→</a>
+                            <a href="{{ proj.github_link }}">GitHub→</a>
+                        </div>
+                        <img src="{{ proj.image.url }}" alt="INGOLF project preview">
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <section class="stats-banner">
+            <div class="container">
+                {% for stat in stats %}
+                <div class="stat-item">
+                    <span class="stat-number">{{ stat.value }}</span>
+                    <span class="stat-label">{{ stat.label }}</span>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+
+
+        <section class="latest-news">
+            <div class="container" id="latest-news">
+                <div class="section-header">
+                    <h2>LATEST NEWS FROM THE IT INDUSTRY</h2>
+                    <a href="{% url 'articles' %}" class="btn btn-secondary">View All →</a>
+                </div>
+                <div class="news-articles">
+                    {% for article in latest_articles %}
+                    <article>
+                        <img src="{{ article.image.url }}" alt="Article thumbnail">
+                        <p class="meta">{{ article.published_date|date:"M d, Y" }} - {{ article.read_time }}</p>
+                        <h3>{{ article.title }}</h3>
+                        <a href="{{ article.link }}" class="read-more">Read More →</a>
+                    </article>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <div class="tech-banner">
+            <div class="tech-scroll">
+            {% for tech in  technologies %}
+                <span>♦ {{ tech.name }}</span>
+            {% endfor %}
+            {% for tech in  technologies %}
+                <span>♦ {{ tech.name }}</span>
+            {% endfor %}  
+            </div>
+        </div>
+
+        <section class="contact-cta"> 
+            <div class="container" id="contact-me"> 
+                <h2>INTERESTED IN WORKING TOGETHER?</h2> 
+                <p>Drop me an email:</p>
+                {% if contact %}
+                <a href="mailto:{{ contact.email }}" class="email-link">{{ contact.email }}</a>
+                {% endif %}
+            </div> 
+            </section>
+
+        {% endblock main %}
+
+

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <style>
+        /* Import Google Fonts for a wider selection */
+        @import url('https://fonts.googleapis.com/css?family=Helvetica+Neue|Times+New+Roman&display=swap');
+
+        /* CSS Variables for a consistent color scheme */
+        :root {
+            --background-color: #FDFCFB;
+            --text-color: #333;
+            --primary-blue: #007BFF;
+            --border-color: #eee;
+            --input-focus-shadow: rgba(0, 123, 255, 0.25);
+        }
+
+        /* General reset and box-sizing */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            font-size: 16px;
+            line-height: 1.6;
+            position: relative; /* Needed for absolute positioning of children */
+        }
+
+        /* Styling for the Home button */
+        #home-btn {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            background-color: #000;
+            color: #fff;
+            padding: 10px 25px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        #home-btn:hover {
+            background-color: #333;
+            transform: translateY(-2px);
+        }
+
+        /* Main container for heading and form */
+        main {
+            width: 100%;
+            max-width: 550px;
+        }
+
+        h1 {
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+            font-size: 48px;
+            color: var(--text-color);
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        /* Form container styling */
+        form {
+            background-color: #ffffff;
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            width: 100%;
+        }
+
+        /* Label styling */
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #555;
+        }
+
+        /* Input and textarea styling */
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 15px 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Focus state for inputs and textarea */
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 4px var(--input-focus-shadow);
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        /* Styling for the submit button */
+        button[type="submit"] {
+            width: 100%;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            background-color: var(--primary-blue);
+            color: #fff;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-top: 1rem;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        /* Removing the default space from <br> tags */
+        br {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <a id="home-btn" href="{% url 'home' %}">Home</a>
+    <main>
+        <h1>Contact Me</h1>
+        <form action="/submit" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" required>
+
+            <label for="email">Email ID:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Send</button>
+        </form>
+    </main>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Stokes - Creative Web Developer{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    {% block styles %}{% endblock styles %}
+</head>
+<body>
+{% block header %}{% endblock header %}
+
+<main>
+    {% block main %}
+    {% endblock main %}
+</main>
+
+<footer class="main-footer">
+        <div class="container">
+            <p class="copyright">Copyright © 2023 Moskur Alam</p>
+            <div class="footer-links">
+                <a href="https://github.com/pratap008" target="_blank">GitHub →</a>
+                <a href=" https://x.com/Nishchhalpsingh?t=mFgqQh_WBT5DPaVdvxG4PQ&s=09" target="_blank">Twitter →</a>
+                <a href="https://www.linkedin.com/in/itspratapnishchhal/" target="_blank">LinkedIn →</a>
+            </div>
+            <a href="#" class="back-to-top">Back to Top ↑</a>
+        </div>
+</footer>
+
+</body>
+</html>
